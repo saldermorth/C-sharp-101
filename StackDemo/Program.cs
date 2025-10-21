@@ -14,6 +14,7 @@
 
             // Ta ut element (Pop - "ta från toppen")
             string översta = stack.Pop();  // "Tredje tallriken"
+            string vailken = stack.Peek();
             Console.WriteLine($"Tog: {översta}");
 
             // Kika på översta utan att ta bort (Peek)
