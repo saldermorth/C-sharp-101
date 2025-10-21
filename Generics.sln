@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeachDemo", "ForeachDemo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListDemo", "ListDemo\ListDemo.csproj", "{120DB00D-E8D6-42AE-B4BB-39D33666B108}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryDemo", "DictionaryDemo\DictionaryDemo.csproj", "{8B19040D-F365-44A6-AE8D-9FC00E6458F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{120DB00D-E8D6-42AE-B4BB-39D33666B108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{120DB00D-E8D6-42AE-B4BB-39D33666B108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{120DB00D-E8D6-42AE-B4BB-39D33666B108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B19040D-F365-44A6-AE8D-9FC00E6458F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B19040D-F365-44A6-AE8D-9FC00E6458F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B19040D-F365-44A6-AE8D-9FC00E6458F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B19040D-F365-44A6-AE8D-9FC00E6458F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
