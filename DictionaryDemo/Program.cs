@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-              //Skapa dictionarys
- Dictionary<string, int> map = new Dictionary<string, int>();
+            //Skapa dictionarys
+            Dictionary<string, int> map = new Dictionary<string, int> { { "Anna", 25 }, { "Bob", 25 } };
             Dictionary<string, int> kontakter = new();
 
             //Lägg till objekt
@@ -28,9 +28,10 @@
             Console.WriteLine(kontakter.ContainsKey("Bob")); // false
 
             //Skriva ut nycklar eller värden         
-            foreach (var namnen in kontakter.Keys)
+            foreach (var namnen in kontakter)
             {
-                Console.WriteLine(namnen);
+                Console.WriteLine(namnen.Value);
+                Console.WriteLine(namnen.Key);
             }
 
             foreach (var nummer in kontakter.Values)
