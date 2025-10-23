@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringBuilderDemo", "String
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuplesDemo", "TuplesDemo\TuplesDemo.csproj", "{7EF541ED-C59B-44EF-83C0-3143F03789FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomDemo", "RandomDemo\RandomDemo.csproj", "{5DB0F39E-95BB-4A32-9E0A-2BF7F5018B28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{7EF541ED-C59B-44EF-83C0-3143F03789FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EF541ED-C59B-44EF-83C0-3143F03789FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EF541ED-C59B-44EF-83C0-3143F03789FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB0F39E-95BB-4A32-9E0A-2BF7F5018B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB0F39E-95BB-4A32-9E0A-2BF7F5018B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB0F39E-95BB-4A32-9E0A-2BF7F5018B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB0F39E-95BB-4A32-9E0A-2BF7F5018B28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
