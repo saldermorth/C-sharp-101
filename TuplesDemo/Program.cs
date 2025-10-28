@@ -6,7 +6,7 @@
         static void Main()
         {
             // Exempel 1: Skapa och använda en enkel tupel
-            var person = ("Anna", 30);
+            (string, int) person = ("Anna", 30);
             Console.WriteLine($"Namn: {person.Item1}, Ålder: {person.Item2}");
 
             // Exempel 2: Tupel med namngivna element

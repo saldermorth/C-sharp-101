@@ -58,7 +58,10 @@
             DateTime now = DateTime.Now;
             DateTime future = now + ts1;
             Console.WriteLine($"Aktuell tid plus 2,5 timmar: {future}");
+            TimeSpan timeSpan = TimeSpan.FromDays(730);
 
+            // Convert to years
+            double years = timeSpan.TotalYears();
         }
     }
 }
