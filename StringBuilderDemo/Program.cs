@@ -143,6 +143,11 @@ class StringVsStringBuilderDemo
     static string StringBuilderConcatenation(int iterations)
     {
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+        sb.ToString().Split(" ").ToArray();
+
+
+
         for (int i = 0; i < iterations; i++)
         {
             sb.Append("a");
