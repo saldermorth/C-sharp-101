@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggningBigger", "LoggningB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingExercise", "LoggingExercise\LoggingExercise.csproj", "{28E289A1-F4C9-469B-97D3-BBA5169F2149}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryParse", "TryParse\TryParse.csproj", "{76B2B8D3-1BBC-4630-AB85-6B5934B10A1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{28E289A1-F4C9-469B-97D3-BBA5169F2149}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28E289A1-F4C9-469B-97D3-BBA5169F2149}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28E289A1-F4C9-469B-97D3-BBA5169F2149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B2B8D3-1BBC-4630-AB85-6B5934B10A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B2B8D3-1BBC-4630-AB85-6B5934B10A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B2B8D3-1BBC-4630-AB85-6B5934B10A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B2B8D3-1BBC-4630-AB85-6B5934B10A1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
