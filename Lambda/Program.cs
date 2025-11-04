@@ -17,6 +17,7 @@ class Program
 
         Func<int, int> doubleIt = x => x * 2;
 
+
         int doubled = doubleIt(5);
 
         Console.WriteLine($"Dubblat: {doubled}");
@@ -126,6 +127,13 @@ class Program
 
         Console.WriteLine($"Kombinerad text: {concat(word1, word2)}");
 
+        //Bara för att
+        Func<int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int> sum16 =
+        (a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16) => a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 +
+         a9 + a10 + a11 + a12 + a13 + a14 + a15 + a16;
+
+        int result = sum16(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+        Console.WriteLine(result); 
     }
 
 }
