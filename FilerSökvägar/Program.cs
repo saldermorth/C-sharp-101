@@ -5,25 +5,27 @@
         static void Main(string[] args)
         {
             // Kombinera sökvägar säkert
-            string basePath = @"C:\Users\Student";
+            string basePath = @"C:\Student";
             string fileName = "dokument.txt";
             string fullPath = Path.Combine(basePath, fileName);
 
             // Hämta olika delar av en sökväg
-            string filePath = @"C:\Projekt\MinApp\data\settings.json";
+            string filePath = "C:\\Projekt\\MinApp\\data\\settings.json";
             string directory = Path.GetDirectoryName(filePath);    // C:\Projekt\MinApp\data
             string fileName2 = Path.GetFileName(filePath);         // settings.json
             string extension = Path.GetExtension(filePath);        // .json
             string fileNameWithoutExt = Path.GetFileNameWithoutExtension(filePath); // settings
 
             // Absolut sökväg - komplett sökväg från root
-            string absolutePath = @"C:\Users\Student\Documents\fil.txt";
+            string absolutePath = $@"C:\Users{filePath}\Student\Documents\fil.txt";
 
             // Relativ sökväg - relativt till nuvarande katalog
             string relativePath = @"Documents\fil.txt";
 
 
             Console.WriteLine(AppPaths.UserProfile);
+            var userFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            Console.WriteLine(userFolder);
         }
 
         // Plattformsoberoende sätt att hitta systemkataloger

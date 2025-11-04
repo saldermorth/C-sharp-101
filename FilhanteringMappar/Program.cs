@@ -1,5 +1,7 @@
 ﻿
 
+using System.IO;
+
 namespace Filhantering
 {
     internal class Program
@@ -8,7 +10,7 @@ namespace Filhantering
         {
 
             string windowsPath = @"C:\Windows";
-
+            var empty = !Directory.EnumerateFileSystemEntries(windowsPath).Any();
             //Finns mappen
             if (Directory.Exists(windowsPath))
             {

@@ -1,54 +1,67 @@
-﻿//Demo 1
-//using System;
-//using System.IO;
-//using System.Text.Json;
-
-//class Person
-//{
-//    public string Name { get; set; }
-//    public int Age { get; set; }
-//}
-
-//class Program
-//{
-//    static void Main()
-//    {
-//        string json = File.ReadAllText("person.json");
-
-//        Person person = JsonSerializer.Deserialize<Person>(json);
-
-//        Console.WriteLine($"{person.Name} is {person.Age} years old.");
-//    }
-//}
-
-//Demo 2
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System;
 using System.Text.Json;
-
-class Address
-{
-    public string Street { get; set; }
-    public string City { get; set; }
-}
-
-class Person
-{
-    public string Name { get; set; }
-    public int Age { get; set; }
-    public Address Address { get; set; }
-}
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        string json = File.ReadAllText("people_with_addresses.json");
+        Console.Clear();
 
-        List<Person> people = JsonSerializer.Deserialize<List<Person>>(json);
+        var cars = new List<Car>{
+            new Car("bmw", "black", new Owner("Hampus")),
+            new Car("volvo", "red", new Owner("Bente")),
+            new Car("bmw", "gray", new Owner("Wisam"))
+        };
 
-        foreach (var p in people)
-            Console.WriteLine($"{p.Name} lives on {p.Address.Street} in {p.Address.City}");
+        var options = new JsonSerializerOptions { WriteIndented = true };
+
+        string json = JsonSerializer.Serialize(cars, options);
+
+        File.WriteAllText("cars.json", json);
+
+        var jsonCars = File.ReadAllText("cars.json");
+
+        var carsArr = JsonSerializer.Deserialize<List<Car>>(jsonCars);
+
+        foreach (var car in carsArr) Console.WriteLine($"{car.Brand} {car.Brand}, {car.Owner}");
+
+
     }
+    public string Sant(bool Availibel)
+    {
+        if (Availibel == true)
+        {
+            return "Sant";
+        }
+        else
+        {
+            return "Falskt";
+        }
+    }
+}
+
+class Owner
+{
+    public string Name { get; set; }
+
+    public Owner(string name)
+    {
+        Name = name;
+    }
+    public Owner() { }
+}
+
+class Car
+{
+    public string Brand { get; set; }
+    public string Color { get; set; }
+    public Owner Owner { get; set; }
+
+    public Car(string brand, string color, Owner owner)
+    {
+        Brand = brand;
+        Color = color;
+        Owner = owner;
+    }
+    public Car() { }
 }
