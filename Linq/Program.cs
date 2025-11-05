@@ -13,6 +13,7 @@ class Program
     {
         InitializeData();
 
+        Examples();
         // Exempel på en enkel query
         Console.WriteLine("Djur i arten 'Kattdjur':");
 
@@ -93,6 +94,60 @@ class Program
 
         Console.ReadLine();
 
+    }
+    static void Examples()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+        // Where() – filtrerar
+        var even = numbers.Where(n => n % 2 == 0);
+        Console.WriteLine("Where(): " + string.Join(", ", even));
+
+        // Select() – transformerar
+        var squares = numbers.Select(n => n * n);
+        Console.WriteLine("Select(): " + string.Join(", ", squares));
+
+        // OrderBy() – stigande
+        var ascending = numbers.OrderBy(n => n);
+        Console.WriteLine("OrderBy(): " + string.Join(", ", ascending));
+
+        // OrderByDescending() – fallande
+        var descending = numbers.OrderByDescending(n => n);
+        Console.WriteLine("OrderByDescending(): " + string.Join(", ", descending));
+
+        // GroupBy() – grupperar jämna/udda
+        var groups = numbers.GroupBy(n => n % 2 == 0 ? "Jämna" : "Udda");
+        foreach (var g in groups)
+            Console.WriteLine($"GroupBy({g.Key}): {string.Join(", ", g)}");
+
+        // First() – första värdet
+        Console.WriteLine("First(): " + numbers.First());
+
+        // FirstOrDefault() – första eller 0 om tom
+        Console.WriteLine("FirstOrDefault(): " + numbers.FirstOrDefault());
+
+        // Count() – antal element
+        Console.WriteLine("Count(): " + numbers.Count());
+
+        // Any() – finns något större än 5?
+        Console.WriteLine("Any() >5: " + numbers.Any(n => n > 5));
+
+        // All() – är alla >0?
+        Console.WriteLine("All() >0: " + numbers.All(n => n > 0));
+
+        // Take() – ta första 3
+        Console.WriteLine("Take(3): " + string.Join(", ", numbers.Take(3)));
+
+        // Skip() – hoppa över 3 första
+        Console.WriteLine("Skip(3): " + string.Join(", ", numbers.Skip(3)));
+
+        // ToList() – konvertera till lista
+        var listResult = numbers.Where(n => n > 5).ToList();
+        Console.WriteLine("ToList(): " + string.Join(", ", listResult));
+
+        // ToArray() – konvertera till array
+        var arrayResult = numbers.Where(n => n < 5).ToArray();
+        Console.WriteLine("ToArray(): " + string.Join(", ", arrayResult));
 
 
     }

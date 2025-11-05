@@ -83,6 +83,12 @@ class Program
         Console.ReadLine();
     }
 
+    static void Examples()
+    {
+      
+
+
+    }
     static void InitializeData()
     {
         inventory = new List<Product>();
