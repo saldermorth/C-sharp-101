@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexer", "Indexer\Indexer.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverload", "OperatorOverload\OperatorOverload.csproj", "{E3238C96-B9C5-4BC6-A028-FE19E20B45A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq", "Linq\Linq.csproj", "{C9CBE458-CBFA-44A3-82BE-071C1E30B41D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -219,6 +221,10 @@ Global
 		{E3238C96-B9C5-4BC6-A028-FE19E20B45A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3238C96-B9C5-4BC6-A028-FE19E20B45A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3238C96-B9C5-4BC6-A028-FE19E20B45A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9CBE458-CBFA-44A3-82BE-071C1E30B41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9CBE458-CBFA-44A3-82BE-071C1E30B41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9CBE458-CBFA-44A3-82BE-071C1E30B41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9CBE458-CBFA-44A3-82BE-071C1E30B41D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
