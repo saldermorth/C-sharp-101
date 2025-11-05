@@ -2,115 +2,153 @@
 using System.Collections.Generic;
 using System.Linq;
 
-class Product
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Category { get; set; }
-    public int Quantity { get; set; }
-    public decimal Price { get; set; }
-    public DateTime LastRestocked { get; set; }
 
-    public override string ToString()
-    {
-        return $"Id: {Id}, Name: {Name}, Category: {Category}, Quantity: {Quantity}, Price: {Price:C}, Last Restocked: {LastRestocked:d}";
-    }
-}
-
-class Supplier
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Country { get; set; }
-}
 
 class Program
 {
-    static List<Product> inventory;
-    static List<Supplier> suppliers;
+    static List<Animal> animals;
+    static List<Breeder> breeders;
 
     static void Main(string[] args)
     {
         InitializeData();
 
         // Exempel på en enkel query
-        Console.WriteLine("Produkter i kategorin 'Verktyg':");
-        var toolProducts = from p in inventory
-                           where p.Category == "Verktyg"
-                           select p;
+        Console.WriteLine("Djur i arten 'Kattdjur':");
 
-        foreach (var product in toolProducts)
+        foreach (var animal in animals.Where(a => a.Species == "Kattdjur"))
         {
-            Console.WriteLine(product);
+            Console.WriteLine($"{animal.Name} ({animal.Species})");
         }
 
-        // Här kan du skriva dina Query Expressions för varje övning
+        // Övning 1: Lista alla djur i arten "Kattdjur".
+        var ovning1 = animals.Where(a => a.Species == "Kattdjur");
 
-        //Övning 1: Lista alla produkter i kategorin "Verktyg".
+        // Övning 2: Hitta alla djur som väger mindre än 100 kg.
+        var ovning2 = animals.Where(a => a.Weight < 100);
 
-        //Övning 2: Hitta alla produkter som kostar mindre än 100 kr.
+        // Övning 3: Sortera alla djur efter vikt, från lättast till tyngst.
+        var ovning3 = animals.OrderBy(a => a.Weight);
 
-        //Övning 3: Sortera alla produkter efter pris, från lägsta till högsta.
+        // Övning 4: Räkna hur många djur som finns i arten "Björn".
+        var ovning4 = animals.Count(a => a.Species == "Björn");
 
-        //Övning 4: Räkna hur många produkter som finns i kategorin "Säkerhetsutrustning".
+        // Övning 5: Visa namnen på alla djur som är äldre än 10 år.
+        var ovning5 = animals.Where(a => a.Age > 10).Select(a => a.Name);
 
-        //Övning 5: Visa namnen på alla produkter som har fler än 100 i lager.
+        // Övning 6: Gruppera djuren efter art och visa antalet djur i varje art.
+        var ovning6 = animals.GroupBy(a => a.Species)
+                             .Select(g => new { Art = g.Key, Antal = g.Count() });
 
-        //Övning 6: Gruppera produkterna efter kategori och visa antalet produkter i varje kategori.
+        // Övning 7: Hitta det tyngsta djuret i varje art.
+        var ovning7 = animals.GroupBy(a => a.Species)
+                             .Select(g => g.OrderByDescending(a => a.Weight).First());
 
-        //Övning 7: Hitta den dyraste produkten i varje kategori.
+        // Övning 8: Lista alla djur som haft veterinärkontroll de senaste 30 dagarna.
+        var ovning8 = animals.Where(a => (DateTime.Now - a.LastCheckup).TotalDays <= 30);
 
-        //Övning 8: Lista alla produkter som har blivit påfyllda (LastRestocked) under de senaste 30 dagarna.
+        // Övning 9: Beräkna total kroppsvikt för alla djur.
+        var ovning9 = animals.Sum(a => a.Weight);
 
-        //Övning 9: Beräkna det totala lagervärdet (Quantity * Price) för alla produkter.
+        // Övning 10: Hitta de tre djuren med lägst vikt.
+        var ovning10 = animals.OrderBy(a => a.Weight).Take(3);
 
-        //Övning 10: Hitta de tre produkterna med lägst lagersaldo (Quantity).
+        // Övning 11: Rapport med art, antal djur och genomsnittlig vikt.
+        var ovning11 = animals.GroupBy(a => a.Species)
+                              .Select(g => new { Art = g.Key, Antal = g.Count(), Medelvikt = g.Average(a => a.Weight) });
 
-        //Övning 11: Skapa en rapport som visar kategori, antal produkter i kategorin, och det genomsnittliga priset för produkter i den kategorin.
+        // Övning 12: Djur som behöver hälsokontroll (t.ex. om senaste > 180 dagar) och sortera efter hur länge sedan.
+        var ovning12 = animals.Where(a => (DateTime.Now - a.LastCheckup).TotalDays > 180)
+                              .OrderByDescending(a => (DateTime.Now - a.LastCheckup).TotalDays);
 
-        //Övning 12: Hitta produkter som behöver beställas (anta att en produkt behöver beställas om Quantity < 50) och sortera dem efter hur brådskande beställningen är (baserat på nuvarande Quantity).
+        // Övning 13: Lista länder där uppfödare finns och antalet uppfödare per land.
+        var ovning13 = breeders.GroupBy(b => b.Country)
+                               .Select(g => new { Land = g.Key, Antal = g.Count() });
 
-        //Övning 13: För varje leverantör, lista alla länder de levererar från och antalet leverantörer per land.
+        // Övning 14: Topplista över de 5 tyngsta djuren.
+        var ovning14 = animals.OrderByDescending(a => a.Weight).Take(5);
 
-        //Övning 14: Skapa en topplista över de 5 mest värdefulla produkterna baserat på deras totala lagervärde (Quantity * Price).
+        // Övning 15: Rapport över hur länge sedan varje djur hade kontroll, sorterat från längst till kortast.
+        var ovning15 = animals.Select(a => new { a.Name, DagarSedan = (DateTime.Now - a.LastCheckup).Days })
+                              .OrderByDescending(x => x.DagarSedan);
 
-        //Övning 15: Generera en rapport som visar hur länge sedan varje produkt senast fylldes på (i dagar), sorterat från längst tid till kortast tid.
+        // Övning 16: Pivottabell över antal djur per art och viktklass.
+        var ovning16 = animals.GroupBy(a => new
+        {
+            a.Species,
+            Viktklass = a.Weight < 100 ? "Lätt (<100kg)" :
+                        a.Weight <= 500 ? "Medel (100–500kg)" : "Tung (>500kg)"
+        })
+        .Select(g => new { g.Key.Species, g.Key.Viktklass, Antal = g.Count() });
 
-        //Övning 16: Skapa en pivottabell som visar antalet produkter per kategori och prisklass (t.ex. 0-100 kr, 101-500 kr, 501+ kr).
+        // Övning 17: Identifiera djur som är "överviktiga" (Weight > 200 och senaste kontroll > 60 dagar).
+        var ovning17 = animals.Where(a => a.Weight > 200 && (DateTime.Now - a.LastCheckup).TotalDays > 60);
 
-        //Övning 17: Identifiera produkter som kan vara överlagrade (anta att en produkt är överlagrad om dess Quantity > 200 och den inte har blivit påfylld de senaste 60 dagarna).
+        // Utskriftsexempel (valfritt)
+        Console.WriteLine("\nÖvning 6 – Antal djur per art:");
+        foreach (var item in ovning6)
+        {
+            Console.WriteLine($"{item.Art}: {item.Antal}");
+        }
 
         Console.ReadLine();
+
+
+
     }
 
     static void InitializeData()
     {
-        inventory = new List<Product>
-        {
-            new Product { Id = 1, Name = "Hammare", Category = "Verktyg", Quantity = 100, Price = 149.99m, LastRestocked = DateTime.Parse("2023-05-15") },
-            new Product { Id = 2, Name = "Skruvmejsel", Category = "Verktyg", Quantity = 200, Price = 39.99m, LastRestocked = DateTime.Parse("2023-06-01") },
-            new Product { Id = 3, Name = "Borrmaskin", Category = "Elverktyg", Quantity = 50, Price = 799.99m, LastRestocked = DateTime.Parse("2023-04-10") },
-            new Product { Id = 4, Name = "Spik 100-pack", Category = "Fästmaterial", Quantity = 500, Price = 29.99m, LastRestocked = DateTime.Parse("2023-06-10") },
-            new Product { Id = 5, Name = "Skruv 100-pack", Category = "Fästmaterial", Quantity = 600, Price = 39.99m, LastRestocked = DateTime.Parse("2023-06-05") },
-            new Product { Id = 6, Name = "Målarpensel", Category = "Måleriutrustning", Quantity = 150, Price = 59.99m, LastRestocked = DateTime.Parse("2023-05-20") },
-            new Product { Id = 7, Name = "Färgroller", Category = "Måleriutrustning", Quantity = 100, Price = 79.99m, LastRestocked = DateTime.Parse("2023-05-22") },
-            new Product { Id = 8, Name = "Skyddsglasögon", Category = "Säkerhetsutrustning", Quantity = 200, Price = 129.99m, LastRestocked = DateTime.Parse("2023-04-25") },
-            new Product { Id = 9, Name = "Hörselskydd", Category = "Säkerhetsutrustning", Quantity = 150, Price = 199.99m, LastRestocked = DateTime.Parse("2023-04-26") },
-            new Product { Id = 10, Name = "Cirkelsåg", Category = "Elverktyg", Quantity = 30, Price = 1299.99m, LastRestocked = DateTime.Parse("2023-03-15") },
-            new Product { Id = 11, Name = "Multimeter", Category = "Elverktyg", Quantity = 40, Price = 399.99m, LastRestocked = DateTime.Parse("2023-05-05") },
-            new Product { Id = 12, Name = "Vattenpass", Category = "Verktyg", Quantity = 80, Price = 89.99m, LastRestocked = DateTime.Parse("2023-05-10") },
-            new Product { Id = 13, Name = "Arbetshandskar", Category = "Säkerhetsutrustning", Quantity = 300, Price = 49.99m, LastRestocked = DateTime.Parse("2023-06-02") },
-            new Product { Id = 14, Name = "Murslev", Category = "Verktyg", Quantity = 60, Price = 69.99m, LastRestocked = DateTime.Parse("2023-05-18") },
-            new Product { Id = 15, Name = "Målarfärg 10L", Category = "Måleriutrustning", Quantity = 40, Price = 449.99m, LastRestocked = DateTime.Parse("2023-05-25") }
-        };
+        animals = new List<Animal>();
 
-        suppliers = new List<Supplier>
+        for (int i = 0; i < 3; i++)
         {
-            new Supplier { Id = 1, Name = "ToolMaster AB", Country = "Sverige" },
-            new Supplier { Id = 2, Name = "ElectroTools GmbH", Country = "Tyskland" },
-            new Supplier { Id = 3, Name = "SafetyFirst Ltd", Country = "Storbritannien" },
-            new Supplier { Id = 4, Name = "PaintPro Inc", Country = "USA" },
-            new Supplier { Id = 5, Name = "FastenRight Co", Country = "Kanada" }
-        };
+            int offset = i * 15; // 15 djur per uppsättning
+            animals.AddRange(new List<Animal>
+        {
+            new Animal { Id = 1 + offset, Name = "Lejon", Species = "Kattdjur", Age = 8, Weight = 190.5, LastCheckup = DateTime.Parse("2023-05-15") },
+            new Animal { Id = 2 + offset, Name = "Elefant", Species = "Elefantdjur", Age = 25, Weight = 5200.3, LastCheckup = DateTime.Parse("2023-06-01") },
+            new Animal { Id = 3 + offset, Name = "Giraff", Species = "Partåiga hovdjur", Age = 12, Weight = 800.7, LastCheckup = DateTime.Parse("2023-04-10") },
+            new Animal { Id = 4 + offset, Name = "Zebra", Species = "Hästdjur", Age = 9, Weight = 380.2, LastCheckup = DateTime.Parse("2023-06-10") },
+            new Animal { Id = 5 + offset, Name = "Noshörning", Species = "Uddatåiga hovdjur", Age = 18, Weight = 2400.9, LastCheckup = DateTime.Parse("2023-06-05") },
+            new Animal { Id = 6 + offset, Name = "Pingvin", Species = "Fåglar", Age = 5, Weight = 12.3, LastCheckup = DateTime.Parse("2023-05-20") },
+            new Animal { Id = 7 + offset, Name = "Isbjörn", Species = "Björn", Age = 14, Weight = 480.8, LastCheckup = DateTime.Parse("2023-05-22") },
+            new Animal { Id = 8 + offset, Name = "Känguru", Species = "Pungdjur", Age = 7, Weight = 65.5, LastCheckup = DateTime.Parse("2023-04-25") },
+            new Animal { Id = 9 + offset, Name = "Flodhäst", Species = "Partåiga hovdjur", Age = 22, Weight = 3400.6, LastCheckup = DateTime.Parse("2023-04-26") },
+            new Animal { Id = 10 + offset, Name = "Krokodil", Species = "Kräldjur", Age = 30, Weight = 900.4, LastCheckup = DateTime.Parse("2023-03-15") },
+            new Animal { Id = 11 + offset, Name = "Tiger", Species = "Kattdjur", Age = 10, Weight = 220.1, LastCheckup = DateTime.Parse("2023-05-05") },
+            new Animal { Id = 12 + offset, Name = "Panda", Species = "Björndjur", Age = 13, Weight = 110.9, LastCheckup = DateTime.Parse("2023-05-10") },
+            new Animal { Id = 13 + offset, Name = "Lemur", Species = "Primater", Age = 6, Weight = 2.4, LastCheckup = DateTime.Parse("2023-06-02") },
+            new Animal { Id = 14 + offset, Name = "Sjölejon", Species = "Säl", Age = 11, Weight = 290.7, LastCheckup = DateTime.Parse("2023-05-18") },
+            new Animal { Id = 15 + offset, Name = "Papegoja", Species = "Fåglar", Age = 4, Weight = 1.1, LastCheckup = DateTime.Parse("2023-05-25") }
+        });
+        }
+
+        breeders = new List<Breeder>
+    {
+        new Breeder { Id = 1, Name = "Savanna Wildlife AB", Country = "Sverige" },
+        new Breeder { Id = 2, Name = "African Nature Ltd", Country = "Kenya" },
+        new Breeder { Id = 3, Name = "Arctic Habitat Oy", Country = "Finland" },
+        new Breeder { Id = 4, Name = "Rainforest Conservation", Country = "Brasilien" },
+        new Breeder { Id = 5, Name = "Aussie Fauna Co", Country = "Australien" }
+    };
     }
+    class Animal
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Species { get; set; }
+        public int Age { get; set; }
+        public double Weight { get; set; }
+        public DateTime LastCheckup { get; set; }
+    }
+    class Breeder
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Country { get; set; }
+    }
+
+
 }
+
