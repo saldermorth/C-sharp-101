@@ -77,6 +77,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq", "Linq\Linq.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqÖvning", "LinqÖvning\LinqÖvning.csproj", "{38C689A3-4A75-4155-9C62-31C52DEFC860}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqExtensionMethods", "LinqExtensionMethods\LinqExtensionMethods.csproj", "{B3AD2C6A-3C21-432B-A91D-0BDC4DFE9414}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqQuerySyntax", "LinqQuerySyntax\LinqQuerySyntax.csproj", "{E5C82C43-87F3-4EED-8DD0-E433F101A8EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -231,6 +235,14 @@ Global
 		{38C689A3-4A75-4155-9C62-31C52DEFC860}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38C689A3-4A75-4155-9C62-31C52DEFC860}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38C689A3-4A75-4155-9C62-31C52DEFC860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3AD2C6A-3C21-432B-A91D-0BDC4DFE9414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3AD2C6A-3C21-432B-A91D-0BDC4DFE9414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3AD2C6A-3C21-432B-A91D-0BDC4DFE9414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3AD2C6A-3C21-432B-A91D-0BDC4DFE9414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5C82C43-87F3-4EED-8DD0-E433F101A8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5C82C43-87F3-4EED-8DD0-E433F101A8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5C82C43-87F3-4EED-8DD0-E433F101A8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5C82C43-87F3-4EED-8DD0-E433F101A8EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
