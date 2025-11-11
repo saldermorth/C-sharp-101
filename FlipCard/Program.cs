@@ -37,7 +37,7 @@ class Program
         allCards.RemoveAll(c => string.IsNullOrWhiteSpace(c.Question) || string.IsNullOrWhiteSpace(c.Answer));
 
         Console.Clear();
-        Console.WriteLine($"📘 Loaded {allCards.Count} flashcards.\n");
+        Console.WriteLine($" Loaded {allCards.Count} flashcards.\n");
         Console.WriteLine("Press ENTER to start studying...");
         Console.ReadKey(true);
 
@@ -49,7 +49,7 @@ class Program
         while (remaining.Any())
         {
             Console.Clear();
-            Console.WriteLine($"🔁 Round {round} — {remaining.Count} card(s) left to master!\n");
+            Console.WriteLine($" Round {round} — {remaining.Count} card(s) left to master!\n");
 
             // Shuffle remaining cards each round
             var cards = remaining.OrderBy(_ => random.Next()).ToList();
@@ -59,14 +59,14 @@ class Program
             {
                 var card = cards[i];
                 Console.Clear();
-                Console.WriteLine($"🃏 Card {i + 1}/{cards.Count}");
+                Console.WriteLine($" Card {i + 1}/{cards.Count}");
                 Console.WriteLine("\nQUESTION:");
                 Console.WriteLine(card.Question);
                 Console.WriteLine("\nPress ENTER to show the answer...");
                 var key = Console.ReadKey(true);
                 if (key.Key == ConsoleKey.Q) return;
 
-                Console.WriteLine("\n💡 ANSWER:");
+                Console.WriteLine("\n ANSWER:");
                 Console.WriteLine(card.Answer);
                 Console.WriteLine("\nDid you know the answer? (Y/N, Q=quit)");
 
@@ -79,7 +79,7 @@ class Program
             if (failed.Any())
             {
                 Console.Clear();
-                Console.WriteLine($"❌ You missed {failed.Count} card(s). Let’s try them again.\n");
+                Console.WriteLine($" You missed {failed.Count} card(s). Let’s try them again.\n");
                 Console.WriteLine("Press ENTER to continue...");
                 Console.ReadKey(true);
                 remaining = failed;
@@ -93,7 +93,7 @@ class Program
             }
         }
 
-        Console.WriteLine("\n✅ Session complete! Press any key to exit...");
+        Console.WriteLine("\n Session complete! Press any key to exit...");
         Console.ReadKey();
     }
 }
