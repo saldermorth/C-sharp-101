@@ -1,4 +1,6 @@
-﻿public class Complex
+﻿using System;
+
+public class Complex
 
 {
     public double Real { get; }
@@ -81,8 +83,28 @@
 // Användning av Complex-klassen med överlagrade operatorer
 class Program
 {
+
+    
+
     static void Main()
     {
+
+        // Exempel på existerande operator overload av -
+        DateTime future= new DateTime(2026, 02, 14);
+        DateTime now = new DateTime(2025, 02, 14);
+
+        //                 egen  - funktionalitet
+        TimeSpan result = future - now;
+        Console.WriteLine(result);
+
+
+        // Exempel på egenbygd operator overload
+        Car bmw = new Car( 320, "550I");
+        Car audi = new Car( 318, "S6");
+
+        Car fastestCar = bmw > audi;
+        Console.WriteLine(fastestCar.Name);
+
         Complex a = new Complex(3, 2);  // 3 + 2i
         Complex b = new Complex(1, 4);  // 1 + 4i
 
@@ -101,5 +123,54 @@ class Program
         Complex c = new Complex(3, 2);  // Samma som a
         Console.WriteLine($"a == c: {a == c}");  // True
         Console.WriteLine($"a == b: {a == b}");  // False
+    }
+
+    public class Car
+    {
+        public int TopSpeed { get; set; }
+        public string Name { get; set; }
+
+        public Car(int topSpeed, string name)
+        {
+            TopSpeed = topSpeed;
+            Name = name;
+        }
+        public Car()
+        {
+
+        }
+
+        public static Car operator >(Car left ,Car right)
+        {
+
+            Car iHaveGotTheFastestCar = new();
+
+            if (left.TopSpeed > right.TopSpeed)
+            {
+                iHaveGotTheFastestCar = left;
+            }
+            else 
+            {
+                iHaveGotTheFastestCar = right;
+            }
+            return iHaveGotTheFastestCar;
+        }
+          public static Car operator <(Car left, Car right)
+        {
+
+            Car iHaveGotTheSlowestCar = new();
+
+            if (left.TopSpeed > right.TopSpeed)
+            {
+                iHaveGotTheSlowestCar = left;
+            }
+            else 
+            {
+                iHaveGotTheSlowestCar = right;
+            }
+            return iHaveGotTheSlowestCar;
+        }
+
+
     }
 }
