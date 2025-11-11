@@ -1,0 +1,430 @@
+[
+  {
+    "question": "Vad är skillnaden mellan Console.Write och Console.WriteLine i C#?",
+    "answer": "Console.Write skriver utan radbrytning"
+  },
+  {
+    "question": "Vad är en IDE?",
+    "answer": "Ett utvecklingsverktyg som samlar kod, körning och felsökning"
+  },
+  {
+    "question": "Vilken knapp används för att aktivera eller inaktivera en breakpoint i Visual Studio?",
+    "answer": "F9"
+  },
+  {
+    "question": "Vad är skillnaden mellan deklaration och initiering?",
+    "answer": "Deklaration anger typ och namn, initiering tilldelar värde"
+  },
+  {
+    "question": "Vad är explicit typkonvertering?",
+    "answer": "När du manuellt konverterar en typ med (typ)"
+  },
+  {
+    "question": "Hur representerar vi OR i en villkorssats?",
+    "answer": "||"
+  },
+  {
+    "question": "Vad står DRY för i programmering?",
+    "answer": "Don't Repeat Yourself"
+  },
+  {
+    "question": "Vilket nyckelord används för metoder som inte returnerar värde?",
+    "answer": "void"
+  },
+  {
+    "question": "Vad gör get och set i en property?",
+    "answer": "De hämtar och sätter värden"
+  },
+  {
+    "question": "Vilket värde har det första elementet i en enum som standard?",
+    "answer": "0"
+  },
+  {
+    "question": "Vad returnerar Math.Abs(-15)?",
+    "answer": "15"
+  },
+  {
+    "question": "Hur genererar du ett slumpmässigt tal mellan 1 och 100?",
+    "answer": "new Random().Next(1, 101)"
+  },
+  {
+    "question": "Vad är skillnaden mellan stack och heap?",
+    "answer": "Stack för värdetyper, heap för referenstyper"
+  },
+  {
+    "question": "Vad är garbage collection?",
+    "answer": "Automatisk rensning av oanvänt minne"
+  },
+  {
+    "question": "Vad står SOLID för?",
+    "answer": "Fem principer för objektorienterad design"
+  },
+  {
+    "question": "Hur representerar vi OR i en villkorssats?",
+    "answer": "||"
+  },
+  {
+    "question": "Vad står DRY för i programmering?",
+    "answer": "Don't Repeat Yourself"
+  },
+  {
+    "question": "Vilket nyckelord används för metoder som inte returnerar värde?",
+    "answer": "void"
+  },
+  {
+    "question": "Vad gör get och set i en property?",
+    "answer": "De hämtar och sätter värden"
+  },
+  {
+    "question": "Vilket värde har det första elementet i en enum som standard?",
+    "answer": "0"
+  },
+  {
+    "question": "Vad är skillnaden mellan Console.Write och Console.WriteLine i C#?",
+    "answer": "Console.Write skriver utan radbrytning"
+  },
+  {
+    "question": "Vad är en IDE?",
+    "answer": "Ett utvecklingsverktyg som samlar kod, körning och felsökning"
+  },
+  {
+    "question": "Vilken knapp används för att aktivera eller inaktivera en breakpoint i Visual Studio?",
+    "answer": "F9"
+  },
+  {
+    "question": "Vad är skillnaden mellan deklaration och initiering?",
+    "answer": "Deklaration anger typ och namn, initiering tilldelar värde"
+  },
+  {
+    "question": "Vad är explicit typkonvertering?",
+    "answer": "När du manuellt konverterar en typ med (typ)"
+  },
+  {
+    "question": "Hur representerar vi OR i en villkorssats?",
+    "answer": "||"
+  },
+  {
+    "question": "Vad står DRY för i programmering?",
+    "answer": "Don't Repeat Yourself"
+  },
+  {
+    "question": "Vilket nyckelord används för metoder som inte returnerar värde?",
+    "answer": "void"
+  },
+  {
+    "question": "Vad gör get och set i en property?",
+    "answer": "De hämtar och sätter värden"
+  },
+  {
+    "question": "Vilket värde har det första elementet i en enum som standard?",
+    "answer": "0"
+  },
+  {
+    "question": "Vad är skillnaden mellan Console.Write och Console.WriteLine i C#?",
+    "answer": "Console.Write skriver utan radbrytning"
+  },
+  {
+    "question": "Vad är en IDE?",
+    "answer": "Ett utvecklingsverktyg som samlar kod, körning och felsökning"
+  },
+  {
+    "question": "Vilken knapp används för att aktivera eller inaktivera en breakpoint i Visual Studio?",
+    "answer": "F9"
+  },
+  {
+    "question": "Vad är skillnaden mellan deklaration och initiering?",
+    "answer": "Deklaration anger typ och namn, initiering tilldelar värde"
+  },
+  {
+    "question": "Vad är explicit typkonvertering?",
+    "answer": "När du manuellt konverterar en typ med (typ)"
+  },
+  {
+    "question": "Hur representerar vi OR i en villkorssats?",
+    "answer": "||"
+  },
+  {
+    "question": "Vad står DRY för i programmering?",
+    "answer": "Don't Repeat Yourself"
+  },
+  {
+    "question": "Vilket nyckelord används för metoder som inte returnerar värde?",
+    "answer": "void"
+  },
+  {
+    "question": "Vad gör get och set i en property?",
+    "answer": "De hämtar och sätter värden"
+  },
+  {
+    "question": "Vilket värde har det första elementet i en enum som standard?",
+    "answer": "0"
+  },
+  {
+    "question": "Vad är skillnaden mellan Console.Write och Console.WriteLine i C#?",
+    "answer": "Console.Write skriver utan radbrytning"
+  },
+  {
+    "question": "Vad är en IDE?",
+    "answer": "Ett utvecklingsverktyg som samlar kod, körning och felsökning"
+  },
+  {
+    "question": "Vilken knapp används för att aktivera eller inaktivera en breakpoint i Visual Studio?",
+    "answer": "F9"
+  },
+  {
+    "question": "Vad är skillnaden mellan deklaration och initiering?",
+    "answer": "Deklaration anger typ och namn, initiering tilldelar värde"
+  },
+  {
+    "question": "Vad är explicit typkonvertering?",
+    "answer": "När du manuellt konverterar en typ med (typ)"
+  },
+  {
+    "question": "Hur representerar vi OR i en villkorssats?",
+    "answer": "||"
+  },
+  {
+    "question": "Vad står DRY för i programmering?",
+    "answer": "Don't Repeat Yourself"
+  },
+  {
+    "question": "Vilket nyckelord används för metoder som inte returnerar värde?",
+    "answer": "void"
+  },
+  {
+    "question": "Vad gör get och set i en property?",
+    "answer": "De hämtar och sätter värden"
+  },
+  {
+    "question": "Vilket värde har det första elementet i en enum som standard?",
+    "answer": "0"
+  },
+  {
+    "question": "Vad är skillnaden mellan Console.Write och Console.WriteLine i C#?",
+    "answer": "Console.Write skriver utan radbrytning"
+  },
+  {
+    "question": "Vad är en IDE?",
+    "answer": "Ett utvecklingsverktyg som samlar kod, körning och felsökning"
+  },
+  {
+    "question": "Vilken knapp används för att aktivera eller inaktivera en breakpoint i Visual Studio?",
+    "answer": "F9"
+  },
+  {
+    "question": "Vad är skillnaden mellan deklaration och initiering?",
+    "answer": "Deklaration anger typ och namn, initiering tilldelar värde"
+  },
+  {
+    "question": "Vad är explicit typkonvertering?",
+    "answer": "När du manuellt konverterar en typ med (typ)"
+  },
+  {
+    "question": "Hur representerar vi OR i en villkorssats?",
+    "answer": "||"
+  },
+  {
+    "question": "Vad står DRY för i programmering?",
+    "answer": "Don't Repeat Yourself"
+  },
+  {
+    "question": "Vilket nyckelord används för metoder som inte returnerar värde?",
+    "answer": "void"
+  },
+  {
+    "question": "Vad gör get och set i en property?",
+    "answer": "De hämtar och sätter värden"
+  },
+  {
+    "question": "Vilket värde har det första elementet i en enum som standard?",
+    "answer": "0"
+  },
+  {
+    "question": "Vad är Git?",
+    "answer": "Ett distribuerat versionskontrollsystem för kod som spårar förändringar över tid."
+  },
+  {
+    "question": "Vad är ett repository i Git?",
+    "answer": "En container som lagrar hela projektets historik och filer."
+  },
+  {
+    "question": "Vad gör kommandot 'git commit'?",
+    "answer": "Sparar ändringar i repositoryt som en ny version."
+  },
+  {
+    "question": "Vad gör kommandot 'git push'?",
+    "answer": "Laddar upp lokala commits till ett fjärrrepository."
+  },
+  {
+    "question": "Vad är en branch i Git?",
+    "answer": "En separat utvecklingslinje som gör det möjligt att arbeta parallellt."
+  },
+  {
+    "question": "Vad är syftet med 'git pull'?",
+    "answer": "Hämtar och integrerar ändringar från fjärrrepositoryt."
+  },
+  {
+    "question": "Vad betyder en merge conflict?",
+    "answer": "En konflikt som uppstår när två ändringar påverkar samma del av en fil."
+  },
+  {
+    "question": "Vad används 'git clone' till?",
+    "answer": "För att skapa en lokal kopia av ett fjärrrepository."
+  },
+  {
+    "question": "Vad är ett interface i C#?",
+    "answer": "Ett kontrakt som definierar vilka metoder en klass måste implementera."
+  },
+  {
+    "question": "Kan ett interface innehålla fält?",
+    "answer": "Nej, endast metodsignaturer och egenskaper utan implementation."
+  },
+  {
+    "question": "Vad är syftet med Generics i C#?",
+    "answer": "Att skriva typsäker och återanvändbar kod utan duplicering."
+  },
+  {
+    "question": "Vad gör List<T> i C#?",
+    "answer": "Skapar en dynamisk lista som automatiskt hanterar storlek och typ."
+  },
+  {
+    "question": "Vad används Dictionary<TKey, TValue> till?",
+    "answer": "För att lagra data i nyckel-värde-par."
+  },
+  {
+    "question": "Vad gör Queue<T>?",
+    "answer": "Hantera element i FIFO-ordning (First In, First Out)."
+  },
+  {
+    "question": "Vad gör Stack<T>?",
+    "answer": "Hantera element i LIFO-ordning (Last In, First Out)."
+  },
+  {
+    "question": "När bör man använda HashSet<T>?",
+    "answer": "När man behöver unika värden utan dubbletter."
+  },
+  {
+    "question": "Vad används Random-klassen till?",
+    "answer": "För att generera pseudoslumpmässiga tal."
+  },
+  {
+    "question": "Vad representerar DateTime-klassen?",
+    "answer": "Ett specifikt datum och tidpunkt."
+  },
+  {
+    "question": "Vad används TimeSpan till?",
+    "answer": "För att representera ett tidsintervall mellan två tidpunkter."
+  },
+  {
+    "question": "Vad är fördelen med StringBuilder?",
+    "answer": "Effektiv hantering av strängar som ändras ofta."
+  },
+  {
+    "question": "Vad används Tuple till?",
+    "answer": "För att lagra flera värden tillsammans utan att skapa en egen klass."
+  },
+  {
+    "question": "Vad är syftet med ett klassbibliotek i C#?",
+    "answer": "Att återanvända och strukturera kod i flera projekt."
+  },
+  {
+    "question": "Vad är NuGet?",
+    "answer": "Ett pakethanteringssystem för att hämta och hantera externa bibliotek."
+  },
+  {
+    "question": "Vad är ett arkitekturmönster?",
+    "answer": "En strukturell lösning för att organisera kod i stora program."
+  },
+  {
+    "question": "Vad är skillnaden mellan Layered och Onion-arkitektur?",
+    "answer": "Layered fokuserar på lager, Onion på beroendeinversion och inre kärna."
+  },
+  {
+    "question": "Vad innebär 'Pass by ref'?",
+    "answer": "Att en metod får referensen till ett objekt och kan ändra originalet."
+  },
+  {
+    "question": "Vad är skillnaden mellan ref och out?",
+    "answer": "ref kräver initiering före anrop, out kräver tilldelning i metoden."
+  },
+  {
+    "question": "Vad är Moq i testning?",
+    "answer": "Ett verktyg för att skapa fejkade beroenden vid enhetstestning."
+  },
+  {
+    "question": "Vad är en Exception?",
+    "answer": "Ett objekt som representerar ett fel eller en oväntad händelse i programflödet."
+  },
+  {
+    "question": "Vilka block används i felhantering?",
+    "answer": "try, catch och finally."
+  },
+  {
+    "question": "Vad gör nyckelordet 'throw'?",
+    "answer": "Kastar ett exception för att signalera ett fel."
+  },
+  {
+    "question": "Vad är skillnaden mellan Error och Exception?",
+    "answer": "Error är allvarliga systemfel, Exception är hanterbara körningsfel."
+  },
+  {
+    "question": "Vad är syftet med TryParse?",
+    "answer": "Att konvertera säkert utan att kasta ett exception."
+  },
+  {
+    "question": "Varför bör man logga fel?",
+    "answer": "För att underlätta felsökning och övervaka programbeteende."
+  },
+  {
+    "question": "Vad är Serilog?",
+    "answer": "Ett loggningsramverk för .NET med stöd för strukturerad loggning."
+  },
+  {
+    "question": "Vad är ett lambda-uttryck?",
+    "answer": "En anonym funktion med kort syntax för att skapa inline-funktioner."
+  },
+  {
+    "question": "Vilket namespace används för filhantering i C#?",
+    "answer": "System.IO."
+  },
+  {
+    "question": "Vad gör File.WriteAllText()?",
+    "answer": "Skriver text till en fil, och skriver över befintligt innehåll."
+  },
+  {
+    "question": "Vad gör File.ReadAllText()?",
+    "answer": "Läser hela filen som en sträng."
+  },
+  {
+    "question": "Vad används JsonSerializer till?",
+    "answer": "För att serialisera och deserialisera objekt till/från JSON."
+  },
+  {
+    "question": "Vad gör Path.Combine()?",
+    "answer": "Kombinerar flera delar till en plattformsoberoende filsökväg."
+  },
+  {
+    "question": "Vad är Pattern Matching i C#?",
+    "answer": "En teknik för att kontrollera typer och värden på ett uttrycksfullt sätt."
+  },
+  {
+    "question": "Vad är ett indexer i C#?",
+    "answer": "En metod som gör att klassen kan använda []-notation likt arrayer."
+  },
+  {
+    "question": "Vad gör operator overloading?",
+    "answer": "Tillåter att definiera hur operatorer fungerar för egna typer."
+  },
+  {
+    "question": "Vad är en Type Pattern?",
+    "answer": "Ett mönster som kontrollerar ett objekts typ och kastar det samtidigt."
+  },
+  {
+    "question": "Vad är ett Property Pattern?",
+    "answer": "Ett mönster som matchar objekt baserat på deras egenskaper."
+  },
+  {
+    "question": "Vad används Pattern Matching ofta till?",
+    "answer": "För att validera, analysera och matcha komplexa datastrukturer."
+  }
+]
