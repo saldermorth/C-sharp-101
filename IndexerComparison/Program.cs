@@ -16,7 +16,7 @@
             // Egen lista med Indexer 
             var lista = new StudentList();
             lista.LäggTill(new Student("Anna"));
-            lista.LäggTill(new Student("Anna")); //  Kastar fel – dubblett
+           // lista.LäggTill(new Student("Anna")); //  Kastar fel – dubblett
 
             Console.WriteLine(lista[0].Namn); // Anna
             Console.WriteLine("Antal: " + lista.Antal); // Antal: 1

@@ -62,7 +62,7 @@
         }
     }
 
-    public class ProduktKatalog
+    public class ProduktKatalog2
     {
         // Implementera den här klassen så att koden i Main fungerar
         // Tips: Du behöver:
@@ -72,5 +72,68 @@
         // 4. En indexer som tar string (produktnamn) och returnerar Produkt
         // 5. En egenskap som ger antal produkter
         // Bonus: Gör så att string-indexern också kan användas för att uppdatera en produkt
+    }
+
+    // En indexer i C# låter dig göra ett objekt åtkomligt som en array eller lista,
+    // alltså med hakparenteser [], fast du själv bestämmer hur det fungerar.
+    public class ProduktKatalog
+    {
+        //Ny lista av produkter
+        private List<Produkt> produkter = new();
+
+        // Ge åtkomst till Count genom Antal
+        public int Antal => produkter.Count;
+
+        //Egen metod där vi hanterar adderingar till listan
+        public void LäggTill(Produkt produkt)
+        {
+            // Om användaren skickar in null kastar vi ett fel
+            if (produkt == null)
+                throw new ArgumentNullException("du skickade in null" + nameof(produkt));
+
+            // Vi letar efter en match till produktens namn. Om ingen hittas kastar vi ett fel
+            if (produkter.Any(p => p.Namn == produkt.Namn))
+                throw new Exception($"Produkten '{produkt.Namn}' finns redan.");
+
+            // Om det inte är en dublett lägger vi till i listan
+            produkter.Add(produkt);
+        }
+
+        // Indexer för position (int) Liknar en egenskap (property), men använder hakparenteser i stället för ett namn.
+        public Produkt this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= produkter.Count)
+                    throw new IndexOutOfRangeException();
+                return produkter[index];
+            }
+        }
+
+        // Indexer för produktnamn (string) Liknar en egenskap (property), men använder hakparenteser i stället för ett namn.
+        public Produkt this[string namn]
+        {
+            get
+            {
+                // Leta i listan efter matchande namn ta första matchande
+                var produkt = produkter.FirstOrDefault(p => p.Namn == namn);
+                // Om vi inte hittar något kasta ett fel
+                if (produkt == null)
+                    throw new Exception($"Produkten '{namn}' hittades inte.");
+
+                // Annars returnera produkten
+                return produkt;
+            }
+            set
+            {
+                // Leta i listan efter matchande namn ta första matchande. Om en produkt hittas kasta ett fel
+                var index = produkter.FindIndex(p => p.Namn == namn);
+                if (index == -1)
+                    throw new Exception($"Produkten '{namn}' hittades inte.");
+
+                // Annars ersätter den gamla produkten på det indexet med den nya produkten (value).
+                produkter[index] = value;
+            }
+        }
     }
 }
