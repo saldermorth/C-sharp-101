@@ -101,7 +101,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlipCard", "FlipCard\FlipCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverloadÖvningLösningsförslag", "OperatorOverloadÖvningLösningsförslag\OperatorOverloadÖvningLösningsförslag.csproj", "{CA669977-B0E8-49EC-9032-5D6495F9FF19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverloadÖvning", "OperatorOverloadÖvning\OperatorOverloadÖvning.csproj", "{3CEBC7F2-1131-4568-AE8D-E4CAE5CE6E33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverloadÖvningMindre", "OperatorOverloadÖvning\OperatorOverloadÖvningMindre.csproj", "{3CEBC7F2-1131-4568-AE8D-E4CAE5CE6E33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
