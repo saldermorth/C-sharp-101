@@ -99,7 +99,7 @@ class Program
                     break;
 
                 // Egenskapsmönster: Matchar ett uttryck baserat på dess egenskaper
-                case Monkey { CanClimb: true }:
+                case Tiger { HasStripes : true }:
                     Console.WriteLine($"{animal.Name} är en klättrande apa!");
                     break;
 

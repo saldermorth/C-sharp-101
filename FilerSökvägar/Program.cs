@@ -8,7 +8,8 @@
             string basePath = @"C:\Student";
             string fileName = "dokument.txt";
             string fullPath = Path.Combine(basePath, fileName);
-
+            string jsonFilPath = @"C:\Users\mikae\OneDrive\dotNET programmering\Repos\JsonReaderDemo Repetition uppg 1\people.json";
+            FileInfo jsonFil = new FileInfo(jsonFilPath);
             // Hämta olika delar av en sökväg
             string filePath = "C:\\Projekt\\MinApp\\data\\settings.json";
             string directory = Path.GetDirectoryName(filePath);    // C:\Projekt\MinApp\data
