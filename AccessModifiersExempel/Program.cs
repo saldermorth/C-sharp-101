@@ -1,95 +1,62 @@
-﻿using System;
-
-namespace DemoÅtkomst
+﻿namespace AccessModifiersExempel
 {
-    // -------------------------------
-    // BASKLASS – Person
-    // -------------------------------
-    public class Person
+    internal class Program
     {
-        public void PublicMetod()
+        static void Main(string[] args)
         {
-            Console.WriteLine("PublicMetod: synlig överallt");
+            Console.WriteLine("Hello, World!");
         }
+    }
+    public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
 
-        private void PrivateMetod()
+        public decimal GetPriceWithVat(decimal vatRate)
         {
-            Console.WriteLine("PrivateMetod: endast inom Person");
-        }
-
-        protected void ProtectedMetod()
-        {
-            Console.WriteLine("ProtectedMetod: synlig i Person och subklasser");
-        }
-
-        internal void InternalMetod()
-        {
-            Console.WriteLine("InternalMetod: synlig inom samma projekt (assembly)");
-        }
-
-        // En metod i samma klass som testar de privata
-        public void TestInomKlass()
-        {
-            Console.WriteLine("TestInomKlass kör alla tillgängliga metoder i Person:");
-            PublicMetod();
-            PrivateMetod();
-            ProtectedMetod();
-            InternalMetod();
+            return Price * (1 + vatRate);
         }
     }
 
-    // -------------------------------
-    // SUBKLASS – Student
-    // -------------------------------
-    public class Student : Person
+    public abstract class Payment
     {
-        public void TestÅtkomst()
+        public decimal Amount { get; set; }
+        public abstract void Process();
+    }
+
+    public class CreditCardPayment : Payment
+    {
+        public string CardNumber { get; set; }
+        public override void Process()
         {
-            Console.WriteLine("\nTest från Student (subklass):");
-
-            PublicMetod();    // Fungerar – public
-            ProtectedMetod(); // Fungerar – protected
-            InternalMetod();  // Fungerar – samma assembly
-
-            // PrivateMetod();  // FEL – kan inte nås i subklass
+            Console.WriteLine("Processing credit card payment...");
         }
     }
 
-    // -------------------------------
-    // ANNAN KLASS – Skola
-    // -------------------------------
-    public class Skola
+    public class SwishPayment : Payment
     {
-        public void TestÅtkomst()
+        public string PhoneNumber { get; set; }
+        public override void Process()
         {
-            Console.WriteLine("\nTest från Skola (ej subklass):");
-            var person = new Person();
-
-            person.PublicMetod();   // Fungerar – public
-            person.InternalMetod(); // Fungerar – samma assembly
-
-            // person.ProtectedMetod(); // FEL – ej subklass
-            // person.PrivateMetod();   // FEL – endast i Person
+            Console.WriteLine("Processing Swish payment...");
         }
     }
 
-    // -------------------------------
-    // HUVUDPROGRAM
-    // -------------------------------
-    public class Program
+
+    public interface IProductRepository
     {
-        public static void Main()
-        {
-            var person = new Person();
-            person.TestInomKlass();
-
-            var student = new Student();
-            student.TestÅtkomst();
-
-            var skola = new Skola();
-            skola.TestÅtkomst();
-
-            Console.WriteLine("\nÖvning klar – jämför vilka som fungerade!");
-        }
+        Product GetById(int id);
+        void Save(Product product);
     }
+
+    public class SqlProductRepository : IProductRepository
+    {
+        public Product GetById(int id) => new Product();
+        public void Save(Product product) { }
+    }
+
+
+
+
 }
